@@ -2,6 +2,8 @@ package ru.konstantinov.address;
 
 import ru.konstantinov.html.HtmlTagWrapper;
 
+import java.io.Serializable;
+
 /**
  * Uderground class
  *
@@ -9,7 +11,7 @@ import ru.konstantinov.html.HtmlTagWrapper;
  * @version 1.0
  * @since 1.0
  */
-public class Underground {
+public class Underground implements Serializable {
     /**
      * @value name - The underground name
      */

@@ -2,6 +2,7 @@ package ru.konstantinov.address;
 
 import ru.konstantinov.html.HtmlTagWrapper;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * Created by Asus on 16.03.2017.
  */
-public class Address {
+public class Address implements Serializable {
     private final String city;
     private final String street;
     private final String house;

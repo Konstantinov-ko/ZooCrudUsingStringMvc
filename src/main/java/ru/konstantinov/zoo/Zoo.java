@@ -3,10 +3,12 @@ package ru.konstantinov.zoo;
 import ru.konstantinov.address.Address;
 import ru.konstantinov.html.HtmlTagWrapper;
 
+import java.io.Serializable;
+
 /**
  * Created by Asus on 16.03.2017.
  */
-public class Zoo {
+public class Zoo implements Serializable {
     private final String name;
     private final Address address;
 
