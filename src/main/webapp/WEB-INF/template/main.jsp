@@ -1,6 +1,5 @@
 <%@ page import="ru.konstantinov.Main" %>
-
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -8,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ZOO</title>
+    <title>ZOO-test</title>
 
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -25,7 +24,7 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
 
-        <a href="/" class="logo"><b>ZOO</b></a>
+        <a href="/" class="logo"><b>ZOO Admin</b></a>
     </header>
 
     <aside>
@@ -34,7 +33,7 @@
                 <p class="centered"><a href="/"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                 <h5 class="centered">ZOO</h5>
                 <li class="mt">
-                    <a href="/zoo.html">
+                    <a href="/zoo.html" class="${selectedMenu}">
                         <i class="fa fa fa-book"></i>
                         <span>ZOO admin</span>
                     </a>
@@ -44,26 +43,7 @@
     </aside>
     <section id="main-content">
         <section class="wrapper">
-            <div class="row">
-                <div class="col-lg-12 main-chart">
-                    <div class="row mtbox">
-                        <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
-                            <div class="box1">
-                                <span class="li_heart"></span>
-                                <h3><%=Main.getBaseSize()%></h3>
-                            </div>
-                            <p><%=Main.getBaseSize()%> зоопарков</p>
-                        </div>
-                        <div class="col-md-2 col-sm-2 box0">
-                            <div class="box1">
-                                <span class="li_data"></span>
-                                <h3><%=Main.checkBase()%></h3>
-                            </div>
-                            <p>Наличие базы</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            ${content}
         </section>
     </section>
 
@@ -87,4 +67,3 @@
 
 </body>
 </html>
-
