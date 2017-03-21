@@ -1,11 +1,9 @@
-package ru.konstantinov.content;
-
-import ru.konstantinov.content.page.ZooPageContent;
+package ru.konstantinov.content.page;
 
 /**
  * Фабрика контента
  */
-final public class ContentFactory {
+public final class ContentFactory {
 
     private ContentFactory() {
     }

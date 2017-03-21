@@ -7,17 +7,21 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Created by Asus on 20.03.2017.
+ * Created by Asus on 21.03.2017.
  */
-public enum BaseAction {
-    GET_ALL {
-        public Map<Integer, Zoo> action() {
-            Base base = new Base();
-            base.getDataFromBase();
+public class BaseAction {
 
-            return base.getZooList();
-        }
-    };
+    public Map<Integer, Zoo> getAll() {
+        Base base = new Base();
+        base.getDataFromBase();
+
+        return base.getZooList();
+    }
+
+    public boolean remove(int zoo_id) {
+        Base base = new Base();
+        return base.removZoo(zoo_id);
+    }
 
     private class Base {
         private Map<Integer, Zoo> zooList = new TreeMap<Integer, Zoo>();
@@ -73,7 +77,42 @@ public enum BaseAction {
                 }
             }
         }
-    }
 
-    public abstract Map<Integer, Zoo> action();
+        private boolean removZoo(int zoo_id) {
+            boolean result = false;
+            List<String[]> baseRowList = readLinesFromBase(Main.BASE_FILE);
+            Iterator<String[]> baseRowIterator = baseRowList.iterator();
+            while (baseRowIterator.hasNext()) {
+                String[] baseRow = baseRowIterator.next();
+                if (Integer.parseInt(baseRow[0]) == zoo_id) {
+                    result = removeRow(baseRow[1]);
+                    baseRowIterator.remove();
+                    break;
+                }
+            }
+            if (result) rewriteBase(Main.BASE_FILE, baseRowList);
+            return result;
+        }
+
+        private boolean removeRow(String fileName) {
+            File file = new File(Main.BASE_DIR, fileName);
+            return file.delete();
+        }
+
+        private void rewriteBase(File base, List<String[]> baseRowList) {
+            PrintWriter writer = null;
+            try {
+                try {
+                    writer = new PrintWriter(base);
+                    for (String[] baseRow : baseRowList) writer.println(baseRow[0] + " " + baseRow[1]);
+                } finally {
+                    if (writer != null) {
+                        writer.flush();
+                        writer.close();
+                    }
+                }
+            } catch (IOException e) {
+            }
+        }
+    }
 }

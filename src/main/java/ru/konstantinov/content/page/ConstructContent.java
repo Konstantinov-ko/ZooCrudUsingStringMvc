@@ -1,4 +1,4 @@
-package ru.konstantinov.content;
+package ru.konstantinov.content.page;
 
 import java.util.Map;
 import java.util.Set;

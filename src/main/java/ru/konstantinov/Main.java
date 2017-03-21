@@ -1,8 +1,5 @@
 package ru.konstantinov;
 
-import ru.konstantinov.zoo.ZooService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import java.io.*;
 
 /**

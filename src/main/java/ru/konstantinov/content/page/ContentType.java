@@ -1,4 +1,4 @@
-package ru.konstantinov.content;
+package ru.konstantinov.content.page;
 
 /**
  * Created by Asus on 20.03.2017.

@@ -34,6 +34,20 @@ public class HtmlTagWrapper {
         htmlBlock.append("<").append(tag).append(" class=\"").append(className).append("\"").append(">");
     }
 
+    public void openHtmlTag(String tag, String className, String dataName, String dataValue) {
+        htmlBlock.append("<")
+                .append(tag)
+                .append(" class=\"")
+                .append(className)
+                .append("\" ")
+                .append("data-")
+                .append(dataName)
+                .append("=\"")
+                .append(dataValue)
+                .append("\"")
+                .append(">");
+    }
+
     public void openHtmlTag(String tag) {
         htmlBlock.append("<").append(tag).append(">");
     }

@@ -7,13 +7,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ZOO-test</title>
+    <title>ZOO</title>
 
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/assets/lineicons/style.css">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/style-responsive.css" rel="stylesheet">
+    <link href="/assets/js/sweetAlert/css/sweetalert.css" rel="stylesheet">
 </head>
 
 <body>
@@ -60,10 +61,12 @@
 <script src="/assets/js/jquery.js"></script>
 <script src="/assets/js/jquery-3.2.0.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-<script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script class="include" type="text/javascript" src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="/assets/js/jquery.scrollTo.min.js"></script>
 <script src="/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-<script src="assets/js/common-scripts.js"></script>
+<script src="/assets/js/common-scripts.js"></script>
+<script src="/assets/js/sweetAlert/js/sweetalert.min.js"></script>
+<script src="/assets/js/zooActions.js"></script>
 
 </body>
 </html>

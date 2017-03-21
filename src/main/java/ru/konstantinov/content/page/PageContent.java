@@ -1,7 +1,5 @@
 package ru.konstantinov.content.page;
 
-import ru.konstantinov.content.ConstructContent;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

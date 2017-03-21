@@ -5,9 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import ru.konstantinov.content.ConstructContent;
-import ru.konstantinov.content.ContentFactory;
-import ru.konstantinov.content.ContentType;
+import ru.konstantinov.content.ajax.AjaxAction;
+import ru.konstantinov.content.ajax.AjaxFactory;
+import ru.konstantinov.content.ajax.AjaxType;
+import ru.konstantinov.content.page.ConstructContent;
+import ru.konstantinov.content.page.ContentFactory;
+import ru.konstantinov.content.page.ContentType;
 
 import java.util.Map;
 
@@ -32,7 +35,9 @@ public class MainController {
     @RequestMapping(value = "/zoo.html", method = RequestMethod.POST, produces = "text/html")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public String catchZooPageAjax(String data) {
-        return "{'name' : 'catchHtmlPageAjax'}";
+    public String catchZooPageAjax(String action, int zoo_id) {
+        AjaxAction ajaxContent = AjaxFactory.getAjaxInstance(AjaxType.REMOVE_ZOO, zoo_id);
+        ajaxContent.makeAction();
+        return ajaxContent.getResult();
     }
 }

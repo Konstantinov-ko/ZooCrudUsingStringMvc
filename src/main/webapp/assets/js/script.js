@@ -1,6 +1,13 @@
 /**
  * Created by Asus on 20.03.2017.
  */
+
+function myNavFunction(id) {
+    $("#date-popover").hide();
+    var nav = $("#" + id).data("navigation");
+    var to = $("#" + id).data("to");
+    console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+}
 $(document).ready(function () {
     var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification
@@ -17,9 +24,6 @@ $(document).ready(function () {
         class_name: 'my-sticky-class'
     });
 
-    return false;
-});
-$(document).ready(function () {
     $("#date-popover").popover({html: true, trigger: "manual"});
     $("#date-popover").hide();
     $("#date-popover").click(function (e) {
@@ -43,11 +47,3 @@ $(document).ready(function () {
         ]
     });
 });
-
-
-function myNavFunction(id) {
-    $("#date-popover").hide();
-    var nav = $("#" + id).data("navigation");
-    var to = $("#" + id).data("to");
-    console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-}
